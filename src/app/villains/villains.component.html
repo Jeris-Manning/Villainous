@@ -1,0 +1,12 @@
+<ul class="villains">
+  <li
+    *ngFor="let villain of villains"
+    [class.selected]="villain === selectedVillain"
+    (click)="onSelect(villain)"
+  >
+    <span class="badge">{{ villain.id | number: "2.0" }}</span>
+    {{ villain.name }}
+  </li>
+</ul>
+
+<app-villain-detail [villain]='selectedVillain'></app-villain-detail>
